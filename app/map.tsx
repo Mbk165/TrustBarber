@@ -1,17 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
-import MapView, { Marker } from "react-native-maps";
-import BottomSheet from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { useState } from "react";
+import MapView, { Marker } from "react-native-maps";
 
 
 export default function Map(){
     const coiffeur = [
         { nom: "Hitl'Hair", latitude: 48.9, longitude:2.4},
         { nom: "Pach'Hair", latitude: 48.8, longitude:2.51},
-        { nom: "Popul'Hair", latitude: 48.7, longitude:2.3}
+        { nom: "On'Hair", latitude: 48.7, longitude:2.3}
     ]
     const [selectedCoiffeur, setSelectedCoiffeur] = useState(null);
     return (
