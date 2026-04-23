@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Text, TextInput, View, ScrollView, Image } from "react-native";
 
+
 export default function Index() {
   const categories = [
           { nom: "Dégradé", image: "https://www.barbededarwin.com/wp-content/uploads/2020/11/degrade-progressif-2.jpg" },
@@ -38,6 +39,7 @@ export default function Index() {
       >
         <TextInput 
           placeholder="Rechercher un coiffeur"
+          placeholderTextColor="gray"
           style={{
             flex: 1
           }}
