@@ -38,6 +38,9 @@ export default function Index() {
       >
         <TextInput 
           placeholder="Rechercher un coiffeur"
+          style={{
+            flex: 1
+          }}
         />
         <Ionicons name = "search" size={24} color="black"/>
       </View>
