@@ -10,6 +10,11 @@ export default function Index() {
           { nom: "RnBoi", image: "https://cloudfront-eu-central-1.images.arcpublishing.com/lepoint/H6JJWMBZIZMFTHM27N67UKLWTY.jpg"}
         ]
 
+  const bestbarber = [
+          { nom: "Coiffeur1", image: "https://i.pinimg.com/736x/76/21/bb/7621bb6087ee02d1c51a38663c88e6b0.jpg" },
+          { nom: "Coiffeur2", image: "https://cdn1.treatwell.net/images/view/v2.i9437819.w1080.h720.xE0A2734B/" },
+        ]
+
   return (
     <View
       style={{
@@ -41,11 +46,12 @@ export default function Index() {
 
       <ScrollView horizontal={true}
         style={{
-            padding: 10
+            padding: 10,
+            maxHeight:200
         }}
       >
         {categories.map((categorie)=>(
-          <View
+          <View key={categorie.nom}
             style={{
               padding: 10,
               alignItems: "center"
@@ -53,12 +59,52 @@ export default function Index() {
           >
             <Image
               source={{ uri: categorie.image }}
-              style={{ width: 100, height: 100, borderRadius: 10 }}
+              style={{ width: 150, height: 150, borderRadius: 10 }}
             />
             <Text>{categorie.nom}</Text>
           </View>
         ))}
       </ScrollView>
+      
+
+      <View
+        style={{
+            width: "90%",
+            padding: 10,
+            marginTop:20,
+            flexDirection: "row",
+            justifyContent: "space-between"
+          }}
+      >
+        <Text 
+          style={{ 
+            fontSize: 18
+          }}
+        >Les meilleurs coiffeurs :</Text>
+      </View>
+
+      <ScrollView horizontal={true}
+        style={{
+            padding: 10,
+            maxHeight:200
+        }}
+      >
+        {bestbarber.map((bestbarber)=>(
+          <View key={bestbarber.nom}
+            style={{
+              padding: 10,
+              alignItems: "center"
+            }}
+          >
+            <Image
+              source={{ uri: bestbarber.image }}
+              style={{ width: 250, height: 150, borderRadius: 10 }}
+            />
+            <Text>{bestbarber.nom}</Text>
+          </View>
+        ))}
+      </ScrollView>
+
 
     </View>
   );
