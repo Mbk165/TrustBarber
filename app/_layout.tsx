@@ -1,24 +1,12 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Tabs } from "expo-router";
+import { Ionicons } from '@expo/vector-icons'
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+  return <Tabs>
+    <Tabs.Screen name='index' options={{tabBarLabel:"Accueil",title: "Acceuil", tabBarIcon: ({color}) => <Ionicons name = "home" size={24} color={color} />}} />
+    <Tabs.Screen name='map' options={{tabBarLabel:"Map", title: "Cherchez un barber",tabBarIcon: ({color}) => <Ionicons name = "map" size={24} color={color} />}} />
+    <Tabs.Screen name='mobile' options={{tabBarLabel:"Mobile", title: "Barber",tabBarIcon: ({color}) => <Ionicons name = "walk" size={24} color={color} />}} />
+    <Tabs.Screen name='booking' options={{tabBarLabel:"Booking",title: "Vos rendez-vous",tabBarIcon: ({color}) => <Ionicons name = "calendar" size={24} color={color} />}} />
+    <Tabs.Screen name='profile' options={{tabBarLabel:"Profile", title: "Votre profile",tabBarIcon: ({color}) => <Ionicons name = "person" size={24} color={color} />}} />
+  </Tabs>;
 }
